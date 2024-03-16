@@ -19,7 +19,7 @@ target=df.iloc[:,0]
  
 # 切分训练集和测试集
 train_x, test_x, train_y, test_y = train_test_split(data,target,test_size=0.2,random_state=42)
-# Check data types and convert if necessary
+
 bool_columns = train_x.select_dtypes(include=['bool']).columns
 train_x[bool_columns] = train_x[bool_columns].astype(float)
 bool_columns_test = test_x.select_dtypes(include=['bool']).columns
@@ -37,7 +37,6 @@ class Data(Dataset):
 data_set=Data()
 
 
-# define batch sizes here 
 batch_size = 64
 def collate_fn(batch):
     inputs, targets = zip(*batch)
