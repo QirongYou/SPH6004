@@ -65,7 +65,6 @@ columns_to_impute = ['glucose_min', 'glucose_max', 'glucose_mean',
 
 df[columns_to_impute] = imputer.fit_transform(df[columns_to_impute])
 
-# Assuming df is your DataFrame
 imp = IterativeImputer(max_iter=10, random_state=0)
 
 # Columns to impute
