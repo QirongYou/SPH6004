@@ -22,7 +22,7 @@ target = df.iloc[:, 0]
 train_x, test_x, train_y, test_y = train_test_split(data, target, test_size=0.2, random_state=42)
 
 # Creating and training the decision tree classifier
-model = DecisionTreeClassifier()  # You can tune parameters like max_depth, min_samples_split, etc.
+model = DecisionTreeClassifier()
 model.fit(train_x, train_y)
 
 # Predicting the test set results
