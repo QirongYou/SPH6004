@@ -22,7 +22,7 @@ target = df.iloc[:, 0]
 train_x, test_x, train_y, test_y = train_test_split(data, target, test_size=0.2, random_state=42)
 
 # Creating and training the logistic regression model
-model = LogisticRegression(max_iter=1000)  # Adjust max_iter if needed
+model = LogisticRegression(max_iter=1000)
 model.fit(train_x, train_y)
 
 # Predicting the test set results
