@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import multilabel_confusion_matrix
 import os
-os.environ['JOBLIB_TEMP_FOLDER'] = '/tmp/joblib'  # Ensure this path exists and is writable
+os.environ['JOBLIB_TEMP_FOLDER'] = '/tmp/joblib' 
 # Load the dataset
 df = pd.read_csv('sph6004_assignment1_data_final.csv')
 
@@ -20,7 +20,6 @@ target = df.iloc[:, 0]
 # Splitting the dataset into train and test sets
 train_x, test_x, train_y, test_y = train_test_split(data, target, test_size=0.2, random_state=42)
 
-# Define a set of parameters for grid search
 param_grid = {
     'n_estimators': [100, 200, 300],
     'learning_rate': [0.01, 0.1, 0.2],
@@ -29,7 +28,6 @@ param_grid = {
     'min_samples_leaf': [1, 2]
 }
 
-# Creating the Grid Search with the Gradient Boosting classifier
 grid_search = GridSearchCV(GradientBoostingClassifier(), param_grid, cv=5, n_jobs=-1, verbose=2)
 
 # Fitting Grid Search on the training data
