@@ -11,7 +11,6 @@ f1_scores = []
 
 # Calculate metrics for each class
 for matrix in confusion_matrices:
-    # Convert to numpy array if not already
     matrix = np.array(matrix)
     
     TN, FP, FN, TP = matrix.ravel()
